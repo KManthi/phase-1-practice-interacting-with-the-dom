@@ -81,12 +81,12 @@ function like() {
     });
 
     if (existingLike) {
-        const likeCount = parseInt(existingLike.children[0].innerText);
-        existingLike.textContent = currentCount + " has been liked <span>" + (likeCount + 1) + "</span> times";
+        const likeCount = parseInt(existingLike.children[0].textContent);
+        existingLike.innerHTML = currentCount + " has been liked <span>" + (likeCount + 1) + "</span> times";
     } else {
         const newLike = document.createElement("li");
         newLike.setAttribute("data-num", currentCount);
-        newLike.textContent = currentCount + " has been liked <span>1</span> time";
+        newLike.innerHTML = currentCount + " has been liked <span>1</span> time";
         likesList.appendChild(newLike);
     }
 };
